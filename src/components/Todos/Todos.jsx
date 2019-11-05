@@ -7,7 +7,9 @@ const Todos = ({ todos }) => {
     <div className="centered">
       <div className="todos">
         {todos.map((todo, index) => {
-          return <Todo key={index} title={todo.item} />;
+          return (
+            <Todo key={index} title={todo.item} completed={todo.completed} />
+          );
         })}
       </div>
     </div>
