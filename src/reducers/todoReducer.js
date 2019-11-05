@@ -1,21 +1,6 @@
 export const initialState = [
   {
     item: "Learn about reducers",
-    completed: true,
-    id: 3892987589
-  },
-  {
-    item: "Learn about reducers",
-    completed: false,
-    id: 3892987589
-  },
-  {
-    item: "Learn about reducers",
-    completed: false,
-    id: 3892987589
-  },
-  {
-    item: "Learn about reducers",
     completed: false,
     id: 3892987589
   }
@@ -33,7 +18,7 @@ export function reducer(state, action) {
 
     case "TOGGLE_COMPLETED": //dispatch( { type: 'TOGGLE_COMPLETED', payload: id} )
       return state.map((todo, index) => {
-        if (todo.id === action.payload) todo.completed = true;
+        if (todo.id === action.payload) todo.completed = !todo.completed;
         return todo;
       });
 

@@ -16,10 +16,14 @@ function App() {
     dispatch({ type: "ADD_TODO", payload: todo });
   };
 
+  const toggleCompleted = id => {
+    dispatch({ type: "TOGGLE_COMPLETED", payload: id });
+  };
+
   return (
     <div className="App">
       <TodoForm handleAdd={handleAdd} />
-      <Todos todos={state} />
+      <Todos todos={state} toggleCompleted={toggleCompleted} />
     </div>
   );
 }
