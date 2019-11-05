@@ -1,8 +1,10 @@
 .todo {
   cursor: pointer;
-  background-color: darkred;
+  background-color: #920003;
   color: #eee;
   padding: 20px;
+  min-width: 200px;
+  min-height: 75px;
   h2 {
     font-weight: 400;
     font-size: 20px;

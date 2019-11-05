@@ -1,8 +1,10 @@
+import moment from "moment";
+
 export const initialState = [
   {
     item: "Learn about reducers",
     completed: false,
-    id: 3892987589
+    id: moment().format("MMMM Do YYYY, h:mm:ss a")
   }
 ];
 
@@ -11,7 +13,11 @@ export function reducer(state, action) {
     case "ADD_TODO":
       return [
         ...state,
-        { item: action.payload, completed: false, id: new Date() }
+        {
+          item: action.payload,
+          completed: false,
+          id: moment().format("MMMM Do YYYY, h:mm:ss a")
+        }
       ];
     case "CLEAR_COMPLETED":
       return state.filter(todo => !todo.completed);
