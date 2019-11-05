@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 
-const TodoForm = () => {
+const TodoForm = ({ handleAdd }) => {
   const [newTodo, setNewTodo] = useState("");
 
   const handleOnChange = event => {
     setNewTodo(event.target.value);
   };
 
-  const handleSubmit = () => {
-    console.log("Submitted with: ", newTodo);
+  const handleSubmit = event => {
+    event.preventDefault();
+    handleAdd(newTodo);
     setNewTodo("");
   };
 
