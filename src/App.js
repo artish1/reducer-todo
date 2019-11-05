@@ -20,9 +20,14 @@ function App() {
     dispatch({ type: "TOGGLE_COMPLETED", payload: id });
   };
 
+  const handleClear = () => {
+    dispatch({ type: "CLEAR_COMPLETED" });
+  };
+
   return (
     <div className="App">
       <TodoForm handleAdd={handleAdd} />
+      <button onClick={handleClear}>Clear Completed</button>
       <Todos todos={state} toggleCompleted={toggleCompleted} />
     </div>
   );
