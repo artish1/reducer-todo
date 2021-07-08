@@ -1,0 +1,12 @@
+.todos {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  max-width: 1050px;
+}
+
+.centered {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
